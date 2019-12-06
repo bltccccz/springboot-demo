@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-pojo/oauth2-pojo.iml" filepath="$PROJECT_DIR$/oauth2-pojo/oauth2-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-resource/oauth2-resource.iml" filepath="$PROJECT_DIR$/oauth2-resource/oauth2-resource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-server/oauth2-server.iml" filepath="$PROJECT_DIR$/oauth2-server/oauth2-server.iml" />
+    </modules>
+  </component>
+</project>
