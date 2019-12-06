@@ -1,10 +1,12 @@
 package com.oauth2.server.config;
 
+import ch.qos.logback.core.rolling.helper.TokenConverter;
 import com.oauth2.server.service.impl.ClientDetailImpl;
 import com.oauth2.server.service.impl.UserDetailImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.token.TokenService;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -13,6 +15,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 import javax.annotation.Resource;
 
@@ -77,5 +82,17 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         endpoints.authenticationManager(authenticationManage);
         endpoints.allowedTokenEndpointRequestMethods();
         endpoints.userDetailsService(userDetailsService());
+//        endpoints.accessTokenConverter(jwtAccessTokenConverter()); //启用jwt方式
     }
+
+//    /**
+//     * 使用默认的jwt方式 (之后更新自定义Jwt方式)
+//     * @return
+//     */
+//    @Bean
+//    public JwtAccessTokenConverter jwtAccessTokenConverter() {
+//        JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+//        return jwtAccessTokenConverter;
+//    }
+
 }
